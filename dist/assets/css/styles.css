@@ -1,0 +1,33 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+.header {
+  background-color: grey;
+  font-size: 5rem;
+  color: white;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.card-content-1 {
+  display: flex;
+  flex-direction: row;
+}
+
+.cards-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.title-1 {
+  background-color: blue;
+  color: white;
+  font-size: 1.5rem;
+}
