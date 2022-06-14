@@ -145,7 +145,6 @@ const init = async () => {
       roleInProgress = false;
     }
   }
-  fs.writeFile;
 };
 
 // when the user finishes building there team they exit the application and there HTML is generated
