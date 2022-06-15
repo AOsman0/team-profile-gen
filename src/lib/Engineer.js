@@ -5,6 +5,7 @@ class Engineer extends Employee {
     super(name, id, email);
 
     this.githubUsername = githubUsername;
+    this.role = "Engineer";
   }
 
   getGithubUsername() {
@@ -12,7 +13,7 @@ class Engineer extends Employee {
   }
 
   getRole() {
-    return "Engineer";
+    return this.role;
   }
 }
 

@@ -16,7 +16,6 @@ describe("Employee", () => {
   it("it should be an Employee", () => {
     const expected = "Employee";
     const actual = instance.getRole();
-
     expect(actual).toEqual(expected);
   });
   it("should return name of Employee", () => {

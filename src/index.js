@@ -103,10 +103,34 @@ const finalQuestion = {
   default: "yes",
 };
 
+const generateEngineerCard = (objEng) => {
+  return ` <div class="card-content-2">
+    <div class="media">
+      <div class="media-left">
+          <p class="title-1"></p>
+         <p> <i class="fa-solid fa-briefcase"></i>"Engineer"</p>
+      </div>
+      <div class="media-content">
+
+        <p class="subtitle is-6">
+          <a href="mailto:">${}</a>
+        </p>
+        <p class="id"></p>
+        <p class="subtitle is-6">
+          <a href="https://github.com/AOsman0"></a>
+        </p>
+      </div>
+    </div>
+    <br />
+  </div>`;
+};
+
 const init = async () => {
   // set staff array
   // this is where i am going to push all the answers from the inquirer questions
-  const teamArr = [];
+  const engineerArr = [];
+  const internArr = [];
+  const managerArr = [];
   // start loop
   let roleInProgress = true;
 
@@ -118,26 +142,31 @@ const init = async () => {
     if (roles === "Engineer") {
       //prompt engineer questions and answers
       const engineerAnswers = await inquirer.prompt(engineerQuestions);
-      console.log(engineerAnswers);
       // create a new instance of engineer to push into teamArr
       const engineer = new Engineer(engineerAnswers);
-      teamArr.push(engineer);
+      engineerArr.push(engineer);
+      console.log(engineerArr);
+      const objEng = Object.fromEntries(engineerArr);
+      console.log(objEng);
+      generateEngineerCard();
     }
     //if intern
     if (roles === "Intern") {
       //prompt engineer questions and answers
       const internAnswers = await inquirer.prompt(internQuestions);
       console.log(internAnswers);
-      const intern = new Engineer(internAnswers);
-      teamArr.push(intern);
+      const intern = new Intern(internAnswers);
+      internArr.push(intern);
+      console.log(internArr);
     }
     // if manager
     if (roles === "Manager") {
       //prompt engineer questions and answers
       const managerAnswers = await inquirer.prompt(managerQuestions);
       console.log(managerAnswers);
-      const manager = new Engineer(managerAnswers);
-      teamArr.push(managerAnswers);
+      const manager = new Manager(managerAnswers);
+      managerArr.push(managerAnswers);
+      console.log(managerArr);
     }
     const { final } = await inquirer.prompt(finalQuestion);
 

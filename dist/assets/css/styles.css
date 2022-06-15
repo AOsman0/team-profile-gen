@@ -31,3 +31,16 @@ html {
   color: white;
   font-size: 1.5rem;
 }
+
+.card-content-1 {
+  border: 0.2rem black solid;
+  padding: 0.5rem;
+}
+.card-content-2 {
+  border: 0.2rem black solid;
+  padding: 0.5rem;
+}
+.card-content-3 {
+  border: 0.2rem black solid;
+  padding: 0.5rem;
+}
