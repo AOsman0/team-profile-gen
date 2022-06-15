@@ -103,7 +103,7 @@ const finalQuestion = {
   default: "yes",
 };
 
-const generateEngineerCard = (objEng) => {
+const generateEngineerCard = (engineerArr) => {
   return ` <div class="card-content-2">
     <div class="media">
       <div class="media-left">
@@ -113,7 +113,7 @@ const generateEngineerCard = (objEng) => {
       <div class="media-content">
 
         <p class="subtitle is-6">
-          <a href="mailto:">${}</a>
+          <a href="mailto:">}</a>
         </p>
         <p class="id"></p>
         <p class="subtitle is-6">
@@ -146,8 +146,6 @@ const init = async () => {
       const engineer = new Engineer(engineerAnswers);
       engineerArr.push(engineer);
       console.log(engineerArr);
-      const objEng = Object.fromEntries(engineerArr);
-      console.log(objEng);
       generateEngineerCard();
     }
     //if intern
