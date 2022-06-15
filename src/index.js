@@ -9,6 +9,8 @@ const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 const Manager = require("./lib/Manager");
 
+// generate cards with arrays
+
 // start sequence of questions
 // what role would the user like to select
 // push answers into array
@@ -144,14 +146,12 @@ const init = async () => {
       console.log(managerArr);
     }
     const { final } = await inquirer.prompt(finalQuestion);
-
+    // when the user finishes building there team they exit the application and there HTML is generated
     if (!final) {
       roleInProgress = false;
       console.log(managerArr, engineerArr, internArr);
     }
   }
 };
-
-// when the user finishes building there team they exit the application and there HTML is generated
 
 init();
