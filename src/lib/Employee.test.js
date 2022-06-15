@@ -6,11 +6,11 @@ const Employee = require("./Employee");
 
 // create a new instance
 
-const instance = new Employee(
-  "Abdirahman Osman",
-  "098765",
-  "osman1289@gmail.com"
-);
+const instance = new Employee({
+  name: "Abdirahman Osman",
+  id: "098765",
+  email: "osman1289@gmail.com",
+});
 
 describe("Employee", () => {
   it("it should be an Employee", () => {

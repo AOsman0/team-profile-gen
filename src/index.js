@@ -11,6 +11,96 @@ const Manager = require("./lib/Manager");
 
 // generate cards with arrays
 
+// instances of manager print manager
+
+// for each of the objects generate HTML
+const generateHTML = (array) => {
+  const generateCard = (each) => {
+    if (each instanceof Engineer) {
+      return ` <div class="card-content-2">
+      <div class="media">
+        <div class="media-left">
+            <p class="title-1">${each.name}</p>
+        </div>
+        <div class="media-content">
+
+          <p class="subtitle is-6">
+            <a href="mailto:"> ${each.email} </a>
+          </p>
+          <p class="id">Engineer ID</p>
+          <p class="subtitle is-6">
+            <a href="https://github.com/${each.githubUsername}"> ${each.githubUsername} </a>
+          </p>
+        </div>
+      </div>
+      <br />
+    </div>`;
+    }
+    if (each instanceof Intern) {
+      return ` <div class="card-content-3">
+    <div class="media">
+      <div class="media-left">
+          <p class="title-1">${each.name}</p>
+      </div>
+      <div class="media-content">
+        <p class="subtitle is-6">
+          <a href="mailto:"> ${each.email} </a>
+        </p>
+        <p class="id">${each.id}</p>
+        <p class="subtitle is-6">${each.school}</p>
+      </div>
+    </div>
+    <br />
+  </div>
+`;
+    }
+    if (each instanceof Manager) {
+      return ` <div class="card-content-1">
+      <div class="media">
+        <div class="media-left">
+            <p class="title-1">${each.name}</p>
+        </div>
+        <div class="media-content">
+          <p class="subtitle is-6">
+            <a href="mailto:"> ${each.email}</a>
+          </p>
+          <p class="id">${each.id}</p>
+          <p class="subtitle is-6">${each.officeNumber}</p>
+        </div>
+      </div>
+      <br />
+    </div>`;
+    }
+  };
+  const teamCards = array.map(generateCard).join("");
+
+  return `<!DOCTYPE html>
+  <html lang="en">
+    <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="./assets/css/styles.css" />
+      <title>Team Profile Generator</title>
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+      />
+    </head>
+    <body>
+      <header class="header">My Team</header>
+      <main>
+        <div class="cards-container">${teamCards}</div>
+      </main>
+    </body>
+  </html>`;
+};
+
+// then write to the file
+
 // start sequence of questions
 // what role would the user like to select
 // push answers into array
@@ -108,9 +198,7 @@ const finalQuestion = {
 const init = async () => {
   // set staff array
   // this is where i am going to push all the answers from the inquirer questions
-  const engineerArr = [];
-  const internArr = [];
-  const managerArr = [];
+  const teamsArray = [];
   // start loop
   let roleInProgress = true;
 
@@ -123,9 +211,10 @@ const init = async () => {
       //prompt engineer questions and answers
       const engineerAnswers = await inquirer.prompt(engineerQuestions);
       // create a new instance of engineer to push into teamArr
+      console.log(engineerAnswers);
       const engineer = new Engineer(engineerAnswers);
-      engineerArr.push(engineer);
-      console.log(engineerArr);
+      teamsArray.push(engineer);
+      console.log(teamsArray);
     }
     //if intern
     if (roles === "Intern") {
@@ -133,8 +222,8 @@ const init = async () => {
       const internAnswers = await inquirer.prompt(internQuestions);
       console.log(internAnswers);
       const intern = new Intern(internAnswers);
-      internArr.push(intern);
-      console.log(internArr);
+      teamsArray.push(intern);
+      console.log(teamsArray);
     }
     // if manager
     if (roles === "Manager") {
@@ -142,16 +231,20 @@ const init = async () => {
       const managerAnswers = await inquirer.prompt(managerQuestions);
       console.log(managerAnswers);
       const manager = new Manager(managerAnswers);
-      managerArr.push(manager);
-      console.log(managerArr);
+      teamsArray.push(manager);
+      console.log(teamsArray);
     }
     const { final } = await inquirer.prompt(finalQuestion);
     // when the user finishes building there team they exit the application and there HTML is generated
     if (!final) {
       roleInProgress = false;
-      console.log(managerArr, engineerArr, internArr);
+      console.log(teamsArray);
     }
   }
+  const finalCards = generateHTML(teamsArray);
+  console.log(finalCards);
+
+  fs.writeFileSync("./dist/osman.html", finalCards);
 };
 
 init();
