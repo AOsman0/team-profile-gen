@@ -140,13 +140,14 @@ const init = async () => {
       const managerAnswers = await inquirer.prompt(managerQuestions);
       console.log(managerAnswers);
       const manager = new Manager(managerAnswers);
-      managerArr.push(managerAnswers);
+      managerArr.push(manager);
       console.log(managerArr);
     }
     const { final } = await inquirer.prompt(finalQuestion);
 
     if (!final) {
       roleInProgress = false;
+      console.log(managerArr, engineerArr, internArr);
     }
   }
 };
