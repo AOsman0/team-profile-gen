@@ -29,6 +29,14 @@ npm jest -- to test
 
 ## Screenshots
 
+![screenshot1](./dist/assets/images/Screenshot%202022-06-16%20at%2015.57.58.png)
+
+![screenshot1](./dist/assets/images/Screenshot%202022-06-16%20at%2015.59.22.png)
+
+![screenshot1](./)
+
+![screenshot1](./)
+
 ## Video WalkThrough
 
 ## Technology Used
