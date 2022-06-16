@@ -9,33 +9,6 @@ const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 const Manager = require("./lib/Manager");
 
-// const letters =
-//   (a,
-//   b,
-//   c,
-//   d,
-//   e,
-//   f,
-//   g,
-//   h,
-//   i,
-//   j,
-//   k,
-//   l,
-//   m,
-//   n,
-//   o,
-//   p,
-//   q,
-//   r,
-//   s,
-//   t,
-//   v,
-//   u,
-//   w,
-//   x,
-//   y,
-//   z);
 // generate cards with arrays
 
 // instances of manager print manager
@@ -126,15 +99,6 @@ const generateHTML = (array) => {
   </html>`;
 };
 
-// then write to the file
-
-// const engineerValidation = async (input) => {
-//   if (input.value.match(letters)) {
-//     return "Please ensure you add a letter";
-//   } else {
-//   }
-// };
-
 // start sequence of questions
 // what role would the user like to select
 // push answers into array
@@ -152,7 +116,7 @@ const engineerQuestions = [
     name: "name",
     type: "input",
     message: "Please enter employee name",
-    // validate: engineerValidation(),
+
     // ensure there are only letters entered here
   },
   {
@@ -180,7 +144,6 @@ const internQuestions = [
     name: "name",
     type: "input",
     message: "Please enter employee name",
-    // validate: engineerValidation(),
   },
   {
     name: "id",
@@ -206,7 +169,6 @@ const managerQuestions = [
     name: "name",
     type: "input",
     message: "Please enter employee name",
-    // validate: engineerValidation(),
   },
   {
     name: "id",
