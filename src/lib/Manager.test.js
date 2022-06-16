@@ -6,12 +6,12 @@ const Manager = require("./Manager");
 
 // create a new instance
 
-const instance = new Manager(
-  "Abdirahman Osman",
-  "098765",
-  "osman1289@gmail.com",
-  "0776547"
-);
+const instance = new Manager({
+  name: "Abdirahman Osman",
+  id: "098765",
+  email: "osman1289@gmail.com",
+  officeNumber: "0776547",
+});
 
 describe("Manager", () => {
   it("it should be an Manager", () => {

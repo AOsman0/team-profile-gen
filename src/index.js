@@ -204,7 +204,7 @@ const init = async () => {
   while (roleInProgress) {
     //display answers
     const { roles } = await inquirer.prompt(rolesOfTeam);
-    console.log(roles);
+
     //if engineer
     if (roles === "Engineer") {
       //prompt engineer questions and answers
@@ -213,7 +213,6 @@ const init = async () => {
       console.log(engineerAnswers);
       const engineer = new Engineer(engineerAnswers);
       teamsArray.push(engineer);
-      console.log(teamsArray);
     }
     //if intern
     if (roles === "Intern") {
@@ -222,7 +221,6 @@ const init = async () => {
       console.log(internAnswers);
       const intern = new Intern(internAnswers);
       teamsArray.push(intern);
-      console.log(teamsArray);
     }
     // if manager
     if (roles === "Manager") {
@@ -231,13 +229,11 @@ const init = async () => {
       console.log(managerAnswers);
       const manager = new Manager(managerAnswers);
       teamsArray.push(manager);
-      console.log(teamsArray);
     }
     const { final } = await inquirer.prompt(finalQuestion);
     // when the user finishes building there team they exit the application and there HTML is generated
     if (!final) {
       roleInProgress = false;
-      console.log(teamsArray);
     }
   }
   const finalCards = generateHTML(teamsArray);

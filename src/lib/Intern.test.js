@@ -6,12 +6,12 @@ const Intern = require("./Intern");
 
 // create a new instance
 
-const instance = new Intern(
-  "Abdirahman Osman",
-  "098765",
-  "osman1289@gmail.com",
-  "UOB"
-);
+const instance = new Intern({
+  name: "Abdirahman Osman",
+  id: "098765",
+  email: "osman1289@gmail.com",
+  school: "UOB",
+});
 
 describe("Intern", () => {
   it("it should be an Intern", () => {
