@@ -33,11 +33,11 @@ npm jest -- to test
 
 ![screenshot1](./dist/assets/images/Screenshot%202022-06-16%20at%2015.59.22.png)
 
-![screenshot1](./)
-
-![screenshot1](./)
+![screenshot1](./dist/assets/images/Screenshot%202022-06-17%20at%2021.12.43.png)
 
 ## Video WalkThrough
+
+(https://drive.google.com/drive/folders/14MMBkg2N0aUtH3MjlzKLxx6RwuFFT6Th?usp=sharing)
 
 ## Technology Used
 
