@@ -210,7 +210,6 @@ const init = async () => {
       //prompt engineer questions and answers
       const engineerAnswers = await inquirer.prompt(engineerQuestions);
       // create a new instance of engineer to push into teamArr
-      console.log(engineerAnswers);
       const engineer = new Engineer(engineerAnswers);
       teamsArray.push(engineer);
     }
@@ -218,7 +217,6 @@ const init = async () => {
     if (roles === "Intern") {
       //prompt engineer questions and answers
       const internAnswers = await inquirer.prompt(internQuestions);
-      console.log(internAnswers);
       const intern = new Intern(internAnswers);
       teamsArray.push(intern);
     }
@@ -226,7 +224,6 @@ const init = async () => {
     if (roles === "Manager") {
       //prompt engineer questions and answers
       const managerAnswers = await inquirer.prompt(managerQuestions);
-      console.log(managerAnswers);
       const manager = new Manager(managerAnswers);
       teamsArray.push(manager);
     }
@@ -237,7 +234,6 @@ const init = async () => {
     }
   }
   const finalCards = generateHTML(teamsArray);
-  console.log(finalCards);
 
   fs.writeFileSync("./dist/osman.html", finalCards);
 };
