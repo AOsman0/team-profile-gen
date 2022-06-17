@@ -27,7 +27,7 @@ const generateHTML = (array) => {
           <p class="subtitle is-6">
             <a href="mailto:"> ${each.email} </a>
           </p>
-          <p class="id">Engineer ID</p>
+
           <p class="subtitle is-6">
             <a href="https://github.com/${each.githubUsername}"> ${each.githubUsername} </a>
           </p>
