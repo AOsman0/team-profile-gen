@@ -1,0 +1,23 @@
+{
+  "name": "src",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "jest": "jest",
+    "test:watch": "jest --verbose --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/jest": "^28.1.1",
+    "bulma": "^0.9.4",
+    "inquirer": "^8.2.4",
+    "jest": "^28.1.1"
+  }
+}
